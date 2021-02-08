@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Elte-4fv-OperaciosRendszerek.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/arg.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/directory.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/file.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/mtime.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/open_fopen.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/passwd.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/strings.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy0/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/exec.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/fcntl.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/fcntl_0.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/fork.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/rand.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/system.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy1/write.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/setitimer.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/sigaction.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/sigaction_multiple.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/sigaction_value.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/signal.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy2/sigprocmask.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy3/nevcso.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy3/pipe.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy3/poll_cso.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy3/ppoll.cso.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy3/sel_cso.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy4/gyak4.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy5/mq_uzenet.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy5/mq_uzenet1.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy5/osztmem.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy5/uzenet.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy6/pek_vasarlo.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy6/pos_szemafor.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy6/szemafor.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gy6/termelo_fogyaszto_systemv.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1oCv1LryHe5YZ4zvgV1U2LpYxb6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="" />
+      <created>1612803171228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612803171228</updated>
+      <workItem from="1612803172680" duration="674000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
