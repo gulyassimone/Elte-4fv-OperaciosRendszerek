@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -10,45 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Elte-4fv-OperaciosRendszerek.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/arg.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/directory.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/file.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/mtime.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/open_fopen.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/passwd.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/strings.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy0/text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/exec.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/fcntl.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/fcntl_0.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/fork.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/rand.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/system.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy1/write.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/setitimer.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/sigaction.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/sigaction_multiple.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/sigaction_value.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/signal.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy2/sigprocmask.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy3/nevcso.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy3/pipe.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy3/poll_cso.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy3/ppoll.cso.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy3/sel_cso.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy4/gyak4.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy5/mq_uzenet.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy5/mq_uzenet1.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy5/osztmem.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy5/uzenet.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy6/pek_vasarlo.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy6/pos_szemafor.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy6/szemafor.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gy6/termelo_fogyaszto_systemv.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_hazi_feladat/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +37,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
@@ -77,6 +59,19 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-OperaciosRendszerek" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,10 +82,29 @@
       <option name="presentableId" value="Default" />
       <updated>1612803171228</updated>
       <workItem from="1612803172680" duration="674000" />
+      <workItem from="1613065145449" duration="640000" />
+      <workItem from="1613307106413" duration="11695000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1051" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613309487515">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1051" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.6.1920.1040@0.0.2560.1400" timestamp="1613309487515" />
   </component>
 </project>
