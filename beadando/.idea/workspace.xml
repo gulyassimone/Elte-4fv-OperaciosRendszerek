@@ -27,8 +27,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a4264856-eac9-452d-9ad7-944c36c3ec6b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +40,10 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1oCv1LryHe5YZ4zvgV1U2LpYxb6" />
+  <component name="ProjectId" id="1qeHZAQjKUFdN20oy7YKcpQJjDf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SzámElm/OpRend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,27 +61,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-OperaciosRendszerek" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="" />
-      <created>1612803171228</created>
+      <changelist id="a4264856-eac9-452d-9ad7-944c36c3ec6b" name="Default Changelist" comment="" />
+      <created>1617433188457</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1612803171228</updated>
-      <workItem from="1612803172680" duration="674000" />
-      <workItem from="1613065145449" duration="640000" />
-      <workItem from="1613307106413" duration="11695000" />
-      <workItem from="1615358138440" duration="11000" />
-      <workItem from="1615484739011" duration="618000" />
-      <workItem from="1617285315553" duration="148000" />
-      <workItem from="1619958470897" duration="9740000" />
-      <workItem from="1620319671384" duration="601000" />
+      <updated>1617433188457</updated>
+      <workItem from="1617433189503" duration="7859000" />
+      <workItem from="1617518460630" duration="6419000" />
     </task>
     <servers />
   </component>
@@ -100,17 +90,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1051" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613309487515">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1051" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.6.1920.1040@0.0.2560.1400" timestamp="1613309487515" />
-    <state x="-1180" y="281" key="FileChooserDialogImpl" timestamp="1619986873361">
+    <state x="-1253" y="125" width="585" height="801" key="find.popup" timestamp="1617518547509">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
-    <state x="-1180" y="281" key="FileChooserDialogImpl/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1619986873361" />
-    <state x="-1253" y="259" width="585" height="534" key="find.popup" timestamp="1619967398042">
-      <screen x="-1920" y="6" width="1920" height="1040" />
-    </state>
-    <state x="-1253" y="259" width="585" height="534" key="find.popup/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1619967398042" />
+    <state x="-1253" y="125" width="585" height="801" key="find.popup/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1617518547509" />
   </component>
 </project>
