@@ -9,8 +9,6 @@ void menu(){
     printf("3 - Adattörlés\n");
     printf("4 - Oltásra várók listája\n");
     printf("5 - Kilépés\n");
-    printf("6 - Folyamat indítása\n");
-    printf("7 - Clear\n");
     printf("<------------------------------------>\n");
     printf("\n");
 }
@@ -27,8 +25,6 @@ int main(void){
             case 2 : editingExistingPatient(filename); break;
             case 3 : deleteExistingPatient(filename); break;
             case 4 : makeList(filename); break;
-            case 6 : startProcess(filename); break;
-            case 7 : clearVakcinatedPatient(filename); break;
             default : printf("Nem megfelelő menüpont\n");
         }  
         menu();

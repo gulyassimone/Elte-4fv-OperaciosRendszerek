@@ -19,6 +19,7 @@ D, A taxis ezt a bevételt osztott memóriában lejelenti a központ felé. Véd
 #include <stdlib.h>     //srand/rand
 #include <sys/ipc.h>    //semget
 #include  <sys/shm.h>   //shmget
+#include <sys/sem.h> //shmget
 
 #define UTAS_JELENTKEZIK SIGUSR1
 
@@ -85,7 +86,7 @@ int main(int argc, char **argv) //a lakcímet agumetumként adjuk meg
         int osztmem = shmget(IPC_PRIVATE, sizeof(int), 0600 | IPC_CREAT);
         int *ar = shmat(osztmem, NULL,0);
         //5 szemaforkészlet létrehozása
-        int szemafor = semget(IPC_RPIVATE, 1 ,0600 | IPC_CREAT);
+        int szemafor = semget(IPC_PRIVATE, 1 ,0600 | IPC_CREAT);
         semctl(szemafor, 0, SETVAL, 0); //nincs kiolvasható adat
         struct sembuf muvelet[1];
 

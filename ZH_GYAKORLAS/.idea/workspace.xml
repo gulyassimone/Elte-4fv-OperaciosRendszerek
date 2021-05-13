@@ -27,13 +27,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4264856-eac9-452d-9ad7-944c36c3ec6b" name="Default Changelist" comment="">
+    <list default="true" id="ff0ed753-ce7d-44d2-a535-143ad4129376" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileEditor.c" beforeDir="false" afterPath="$PROJECT_DIR$/FileEditor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/FileEditor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage.bin" beforeDir="false" afterPath="$PROJECT_DIR$/storage.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5zh.c" beforeDir="false" afterPath="$PROJECT_DIR$/5zh.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beadando/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beadando/FileEditor.c" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/FileEditor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beadando/FileEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/FileEditor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beadando/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../beadando/storage.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/storage.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +42,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
-    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1qeHZAQjKUFdN20oy7YKcpQJjDf" />
+  <component name="ProjectId" id="1sTJBWA1nVC48qTro1lCOUtnKtH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,19 +64,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a4264856-eac9-452d-9ad7-944c36c3ec6b" name="Default Changelist" comment="" />
-      <created>1617433188457</created>
+      <changelist id="ff0ed753-ce7d-44d2-a535-143ad4129376" name="Default Changelist" comment="" />
+      <created>1620890510545</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617433188457</updated>
-      <workItem from="1617433189503" duration="7859000" />
-      <workItem from="1617518460630" duration="6419000" />
-      <workItem from="1620573797106" duration="3350000" />
+      <updated>1620890510545</updated>
+      <workItem from="1620890511593" duration="3280000" />
     </task>
     <servers />
   </component>
@@ -93,12 +90,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1253" y="125" width="585" height="801" key="find.popup" timestamp="1617518547509">
-      <screen x="-1920" y="6" width="1920" height="1040" />
-    </state>
-    <state x="-1253" y="125" width="585" height="801" key="find.popup/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1617518547509" />
   </component>
 </project>

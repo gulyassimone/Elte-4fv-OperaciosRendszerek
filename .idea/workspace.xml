@@ -29,6 +29,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/FileEditor.c" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/FileEditor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/FileEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/FileEditor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/storage.bin" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/storage.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SzámElm/OpRend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Asztali gép" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,6 +69,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-OperaciosRendszerek" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,6 +93,7 @@
       <workItem from="1617285315553" duration="148000" />
       <workItem from="1619958470897" duration="9740000" />
       <workItem from="1620319671384" duration="601000" />
+      <workItem from="1620559066219" duration="18207000" />
     </task>
     <servers />
   </component>
@@ -104,10 +117,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1051" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.6.1920.1040@0.0.2560.1400" timestamp="1613309487515" />
-    <state x="-1180" y="281" key="FileChooserDialogImpl" timestamp="1619986873361">
+    <state x="-1180" y="281" width="792" height="490" key="FileChooserDialogImpl" timestamp="1620577522486">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
-    <state x="-1180" y="281" key="FileChooserDialogImpl/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1619986873361" />
+    <state x="-1180" y="281" width="792" height="490" key="FileChooserDialogImpl/0.0.2560.1400/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1620577522486" />
     <state x="-1253" y="259" width="585" height="534" key="find.popup" timestamp="1619967398042">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
