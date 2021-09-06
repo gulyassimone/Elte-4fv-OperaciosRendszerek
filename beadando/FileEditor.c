@@ -17,16 +17,16 @@
 #include <unistd.h>
 #include "FileEditor.h"
 #include <limits.h>     //LONG_MAX
-#include <time.h>       //time  
+#include <time.h>       //time
 #include <signal.h>     //maszkolás
 #include <sys/msg.h>    //uzenetkuldes
 #include <limits.h>     //LONG_MAX
-#include <time.h>       //time  
+#include <time.h>       //time
 #include <stdlib.h>     //srand/rand
 
-#define BUS1_SIGNAL SIGUSR1
-#define BUS2_SIGNAL SIGUSR2
+#define BUS_SIGNAL SIGUSR1
 #define DATA_SIGNAL SIGUSR1
+#define HARCRA_FEL SIGUSR1
 
 #define MIN_PATIENT 4
 #define MAX_PATIENT 10
@@ -173,7 +173,7 @@ void editingExistingPatient(const char *filename) {
     close(fd);
 }
 
-void updateVakcinatedPatient(const char *filename, struct Patient * patients) {
+void updateVakcinatedPatient(const char *filename, int searchPatientID) {
     struct Patient patient;
 
     struct flock fl;
@@ -192,21 +192,23 @@ void updateVakcinatedPatient(const char *filename, struct Patient * patients) {
         exit(EXIT_FAILURE);
     }
 
-    if (fcntl(fd, F_SETLK, &fl) == -1) {
-        perror("File lock failed!");
-        exit(EXIT_FAILURE);
+    while (fcntl(fd, F_SETLK, &fl) == -1) {
+        fl.l_type = F_WRLCK; //írásra vagy olvasásra
+        fl.l_whence = SEEK_SET;
+        fl.l_start = 0;
+        fl.l_len = 0;
+        fl.l_pid = getpid();
     }
 
-    int i = 0;
     while (read(fd, &patient, sizeof(patient)) == sizeof(patient)) {
-        if (strcmp(patient.name, patients[i].name) == 0 && patient.birthYear == patients[i].birthYear) {
-            patient.vakcinated = patients[i].vakcinated;
+        if (patient.id == searchPatientID) {
+            patient.vakcinated = 1;
+            printf("--------%s -nek beadtuk a vakcinát!----------\n", patient.name);
             lseek(fd, (sizeof(struct Patient) * (patient.id - 1)), SEEK_SET);
             if (write(fd, &patient, (sizeof(patient))) < 0) {
                 perror("Error updating\n");
                 exit(EXIT_FAILURE);
             }
-            ++i;
         }
     }
 
@@ -218,6 +220,7 @@ void updateVakcinatedPatient(const char *filename, struct Patient * patients) {
     }
     close(fd);
 }
+
 void clearVakcinatedPatient(const char *filename) {
     struct Patient patient;
 
@@ -259,6 +262,51 @@ void clearVakcinatedPatient(const char *filename) {
         exit(EXIT_FAILURE);
     }
     close(fd);
+}
+struct Patient getPatient(const char *filename, int searchPatientID) {
+    struct Patient patient;
+    int result = 0;
+
+    struct flock fl;
+    fl.l_type = F_RDLCK; //írásra vagy olvasásra
+    fl.l_whence = SEEK_SET;
+    fl.l_start = 0;
+    fl.l_len = 0;
+    fl.l_pid = getpid();
+
+    int fd;
+
+    fd = open(filename, O_RDONLY);
+
+    if (fd == -1) {
+        perror("File open failed!");
+        exit(EXIT_FAILURE);
+    }
+
+    while (fcntl(fd, F_SETLK, &fl) == -1) {
+        fl.l_type = F_RDLCK; //írásra vagy olvasásra
+        fl.l_whence = SEEK_SET;
+        fl.l_start = 0;
+        fl.l_len = 0;
+        fl.l_pid = getpid();
+    }
+
+    while (!result && read(fd, &patient, sizeof(patient)) == sizeof(patient) ) {
+   //     printf("Keresendő ID-k %i %i\n", patient.id, searchPatientID);
+        if (patient.id == searchPatientID) {
+            //        printf("Megtaláltam %s\n", patient.name);
+            result=1;
+        }
+    }
+
+
+    fl.l_type = F_UNLCK;
+    if (fcntl(fd, F_SETLK, &fl) == -1) {
+        perror("File unlock failed!");
+        exit(EXIT_FAILURE);
+    }
+    close(fd);
+    return patient;
 }
 
 void deleteExistingPatient(const char *filename) {
@@ -370,7 +418,8 @@ void makeList(char *filename) {
 
     while (read(fd, &patient, sizeof(patient)) == sizeof(patient)) {
         printf(" (%i) \n név: \t %s \n születési év: \t %i \n telefonszám: \t %s  \n Hajlandó extra díjat fizetni? \t %s \n Oltva van? %s \n \n",
-               patient.id, patient.name, patient.birthYear, patient.phoneNumber, patient.extra == 1 ? "igen" : "nem", patient.vakcinated == 0 ? "nem":"igen");
+               patient.id, patient.name, patient.birthYear, patient.phoneNumber, patient.extra == 1 ? "igen" : "nem",
+               patient.vakcinated == 0 ? "nem" : "igen");
     }
 
     fl.l_type = F_UNLCK;
@@ -407,7 +456,7 @@ int getPatientNumber(char *filename) {
     }
 
     while (read(fd, &patient, sizeof(patient)) == sizeof(patient)) {
-        if(patient.vakcinated == 0)
+        if (patient.vakcinated == 0)
             ++number;
     }
 
@@ -420,102 +469,63 @@ int getPatientNumber(char *filename) {
     return number;
 }
 
-void handler(int signo) 
-{
+void handler(int signo) {
 
 }
 
-void writeToPipe(char * pipe, struct Patient * patients, int size)
-{
-    int fd=open(pipe,O_WRONLY);
-    for(int i = 0; i < size; ++i){
-        printf("\nÍrás közben: %s\n", patients[i].name);
-        write(fd, &patients[i], sizeof(patients[i]));       
-    }
-    close(fd);
-}
-void readFromPipe(char * pipe, struct Patient * patients)
-{
-    int fd=open(pipe,O_RDONLY);
-    struct Patient patient;
-    int i = 0;
-    while (read(fd, &patient, sizeof(patient)) == sizeof(patient)) {
-        
-        printf("\nOlvasás közben: %s\n", patients[i].name);
-        patients[i] = patient;
-        ++i;
-    }
-    close(fd);
-}
-int createPipe(char * pipe, int piece){
-    sprintf(pipe,"/tmp/%d%d",getpid(), piece);
-    int fid=mkfifo(pipe, S_IRUSR|S_IWUSR ); 
-    if (fid==-1)
-    {
-	    printf("Error number: %i",errno);
-	    exit(EXIT_FAILURE);
-    }
-    return fid;
-}
-
-void bus(int *pipe,  char *pipefd, int line) {
-   printf("ELindult %i %i %i" , line, getpid(), getppid());
+void bus(int *pipe,  int line, char * filename) {
+    printf("ELindult %i. Busz \n", line);
     union sigval category;
     category.sival_int = 1;
-    printf("kuldi a signalt\n");
-    if(line==1){
-        sigqueue(getppid(), BUS1_SIGNAL, category);
-          printf("elküldte\n");
-    }else{
-        sigqueue(getppid(), BUS2_SIGNAL, category);
-          printf("elküldte\n");
-    }
-  
+
+ //   printf("kuldi a signalt\n");
+    sigqueue(getppid(), HARCRA_FEL, category);
+ //   printf("elküldte\n");
+
 
     close(pipe[1]);
     int meret;
     //maszkolás
-    printf("Várok a szülőre\n");
+ //   printf("Várok a szülőre %i\n",getpid());
+
     sigset_t mask3;
     sigfillset(&mask3);
     sigprocmask(SIG_SETMASK, &mask3, NULL);
+
     signal(DATA_SIGNAL, handler);
     sigdelset(&mask3, DATA_SIGNAL);
     sigsuspend(&mask3);
 
-    
-printf("szülő adott választ\n");
+
+  //  printf("szülő adott választ %i\n", getpid());
+
     read(pipe[0], &meret, sizeof(meret));
-    printf("meret %i busz: %i\n", meret, line);
-    close(pipe[0]);
-    struct Patient patients[meret];
+ //   printf("meret %i busz: %i\n", meret, line);
 
+    int number;
+    sleep(1);
+ //   printf("elkezdem beolvasni %i\n", line);
+    for(int i = 0; i< meret; ++i){
+        read(pipe[0], &number, sizeof(number));
+ //      printf("ezt olvastam be %i\n",number);
 
-    printf("elkezdem beolvasni %i", line);
+        struct Patient patient = getPatient(filename, number);
 
+        printf("Páciens: %s\n", patient.name);
 
-    sigsuspend(&mask3);
-    readFromPipe(pipefd, patients);
-    printf("beolvastam");
-    for(int i = 0; i < meret; ++i)
-        printf("Páciens: %s\n", patients[i].name);
-
-
-    for (int i = 0; i < meret; ++i) {
-        printf("Várjuk a %s nevű beteget az %i. busznál",patients[i].name, line);
+        printf("Várjuk a %s nevű beteget az %i. busznál", patient.name, line);
+        srand(time(NULL));
         int eljott = rand() % 10 + 1;
+        printf("Random szám: %i \n", eljott);
+
         if (eljott <= 9) {
-            patients[i].vakcinated = 1;
+            updateVakcinatedPatient(filename, patient.id);
         }
+        sleep(1);
     }
-    category.sival_int = 2;
-    if(line){
-        sigqueue(getppid(), BUS1_SIGNAL, category);
-    }else{
-        sigqueue(getppid(), BUS2_SIGNAL, category);
-    }
-    printf("vege");
-    writeToPipe(pipefd, patients, meret);
+    close(pipe[0]);
+
+    printf("Végeztem %i busz", line);
     exit(0);
 }
 
@@ -526,26 +536,19 @@ void startProcess(char *filename) {
     sigfillset(&mask);
     sigprocmask(SIG_SETMASK, &mask, NULL);
 
-    sigset_t mask2;
-    sigfillset(&mask2);
-    sigprocmask(SIG_SETMASK, &mask2, NULL);
-    //pipeok 
+    //pipeok
     int pipe1[2];
     pipe(pipe1);
     int pipe2[2];
     pipe(pipe2);
-    char pipefd1[20];
-    char pipefd2[20];
 
-    int fid1 = createPipe(pipefd1,1);
-    //int fid2 = createPipe(pipefd2,2);
 
     //adatok beolvasásához előkészületek
     int patientsNumber;
-    if((patientsNumber = getPatientNumber(filename))>10){
+    if ((patientsNumber = getPatientNumber(filename)) > 10) {
         patientsNumber = 10;
     }
-    printf("%i",patientsNumber);
+    printf("%i", patientsNumber);
     struct Patient patients[patientsNumber];
     struct Patient patient;
 
@@ -576,8 +579,8 @@ void startProcess(char *filename) {
     while (read(fd, &patient, sizeof(patient)) && i < patientsNumber) {
         if (patient.vakcinated == 0) {
             patients[i] = patient;
-            
-            printf("Olvasom %s %i\n", patients[i].name,i);
+
+            // printf("Olvasom %s %i\n", patients[i].name,i);
             ++i;
         }
     }
@@ -594,14 +597,16 @@ void startProcess(char *filename) {
         return;
     }
 
-    printf("ELindult %i " , getpid());
+   // printf("Szülő %i \n", getpid());
     //párhuzamosítás
     pid_t bus1 = fork();
     if (bus1) {//szulo
+
+   //    printf("Szülő %i \n", getpid());
         //signal beállítása
-        signal(BUS1_SIGNAL, handler);
+        signal(HARCRA_FEL, handler);
         sigemptyset(&mask);
-        sigaddset(&mask, BUS1_SIGNAL);
+        sigaddset(&mask, HARCRA_FEL);
 
         siginfo_t info2;
         siginfo_t info;
@@ -609,86 +614,75 @@ void startProcess(char *filename) {
         varakozas.tv_sec = LONG_MAX;
         varakozas.tv_nsec = 0;
         //várakozás a signálra
+    //    printf("Várok a gyerekre!\n");
         sigtimedwait(&mask, &info, &varakozas);
-        printf("Megkaptam az 1. signalt");
-       if (patientsNumber > 9) {
-                struct Patient part1[5] ={patients[0],patients[1],patients[2],patients[3],patients[4]};
-                struct Patient part2[5] = {patients[5],patients[6],patients[7],patients[8],patients[9]};
+    //    printf("Megkaptam az 1. signalt\n");
 
-
-                signal(BUS2_SIGNAL, handler);
-                sigemptyset(&mask2);    
-                sigaddset(&mask2, BUS2_SIGNAL);
-                number=5;
-                pid_t bus2 = fork();
-                if (bus1 > 0){
-                    sigtimedwait(&mask2, &info2, &varakozas);
-                    if (info.si_value.sival_int == 1 && (info2.si_value.sival_int == 1 || patientsNumber < 10))
-                    {
-                        printf("Harcra fel!");
-                    }
-                    printf("Megkaptam a signalt!");
-                    close(pipe1[0]);//olvasás bezárása
-                    kill(bus1, DATA_SIGNAL);
-                    write(pipe1[1], &number, sizeof(number)); //csőbe írás , méret
-
-                    close(pipe2[0]);//olvasás bezárása
-                    kill(bus2, DATA_SIGNAL);
-                    write(pipe2[1], &number, sizeof(number)); //csőbe írás , méret
-
-
-                    union sigval category;
-                    category.sival_int = 1;
-
-                    writeToPipe(pipefd1, part1, 5);
-                    kill(bus1, DATA_SIGNAL);
-                    writeToPipe(pipefd2, part2, 5);
-                     kill(bus2, DATA_SIGNAL);
-
-                    sigtimedwait(&mask, &info, &varakozas);
-                    if (info.si_value.sival_int == 2 && (info2.si_value.sival_int == 2 || patientsNumber < 10))
-                    printf("Feldolgozom az adatokat");
-
-
-                    readFromPipe(pipefd1, part1);
-                    updateVakcinatedPatient(filename, part1);
-                    
-                    readFromPipe(pipefd2, part2);
-                    updateVakcinatedPatient(filename, part2);
-                    //csőbe írás  
-                    wait(NULL);
-                    wait(NULL);
-                } else {
-                    //2. gyerek
-                    bus(pipe2, pipefd2, 2); 
-                }
-        }else{
-                if (info.si_value.sival_int == 1 && (info2.si_value.sival_int == 1 || patientsNumber < 10))
-                    printf("Harcra fel!");
+        if (patientsNumber > 9) {
+            int number = 5;
+            pid_t bus2 = fork();
+            if (bus2) {
+            //szülő
+       //        printf("Várok a 2. gyerekre %i \n", getpid());
+                sigemptyset(&mask);
+                sigaddset(&mask, HARCRA_FEL);
+                sigtimedwait(&mask, &info2, &varakozas);
+        //        printf("Meegvan a 2. ggyerek1 %i \n", getpid());
 
                 close(pipe1[0]);//olvasás bezárása
-                printf("Írok a csőbe");
-                write(pipe1[1], &patientsNumber, sizeof(patientsNumber)); //csőbe írás , méret
-                printf("Csőben van a cucc");
-                writeToPipe(pipefd1, patients, patientsNumber);
+                close(pipe2[0]);//olvasás bezárása
 
-                sigtimedwait(&mask, &info, &varakozas);
-                if (info.si_value.sival_int == 2 && (info2.si_value.sival_int == 2 || patientsNumber < 10))
-                    printf("Feldolgozom az adatokat");
+                write(pipe1[1], &number, sizeof(number)); //csőbe írás , méret  
 
-                readFromPipe(pipefd1, patients);
-                updateVakcinatedPatient(filename, patients);
-                //csőbe írás  
+                for(i = 0; i<5; ++i){
+        //            printf("Átküldtem a patient id-t %i\n", patients[i].id);
+                    write(pipe1[1], &patients[i].id, sizeof(patients[i].id)); //csőbe írás , méret  
+                }
+                
+        //        printf("Küldöm az adatokat bus1-nek! %i\n", getpid());
+                kill(bus1, DATA_SIGNAL);
+
+                
+                write(pipe2[1], &number, sizeof(number)); //csőbe írás , méret  
+
+                while(i<10){
+        //            printf("Átküldtem a patient id-t %i\n", patients[i].id);
+                    write(pipe2[1], &patients[i].id, sizeof(patients[i].id)); //csőbe írás , méret  
+                    ++i;
+                }
+
+        //        printf("Küldöm az adatokat bus2-nek! %i\n", getpid());
+                kill(bus2, DATA_SIGNAL);
+
+                close(pipe1[1]);
+                close(pipe2[1]);
+
                 wait(NULL);
                 wait(NULL);
-        }      
+            
+            } else {
+                //2. gyerek
+           //     printf("gyerek1 %i \n", getpid());
+                bus(pipe2, 2, filename);
+            }
+        }else{
+            close(pipe1[0]);//olvasás bezárása
 
+            write(pipe1[1], &number, sizeof(number)); //csőbe írás , méret  
+
+            for(i = 0; i<5; ++i){
+        //        printf("Átküldtem a patient id-t %i\n", patients[i].id);
+                write(pipe1[1], &patients[i].id, sizeof(patients[i].id)); //csőbe írás , méret  
+            }
+                
+        //    printf("Küldöm az adatokat bus1-nek! %i\n", getpid());
+            kill(bus1, DATA_SIGNAL);
+            close(pipe1[1]);
+            wait(NULL);
+        }
     } else {//gyerek
-    printf("gyerek");
-        bus(pipe1, pipefd1, 1);   
+    //    printf("gyerek");
+        bus(pipe1,  1, filename);
     }
-
-    unlink(pipefd1);
-    unlink(pipefd2);
 
 }

@@ -1,0 +1,143 @@
+OP 2. elóadás jegyzet
+
+	Számítógép felépítése
+		
+		Hardveres:
+			- Tárolt programok, utasítások, adatok azonosan, binárisan a memóriában vannak.
+			- Vezérlőegység(CPU) és a aritmetikai-logikai egység(ALU) felügyelik az utasítások, alapvető 
+			  aritmetikai műveletek végrehajtásást.
+			- Be/kimentek kezelése(I/O), gép és külvilág kapcsolata.
+			- Ezen jellemzőket gyakran Neumann elv elemeiként is ismerjük
+				~ Neumann-elvek
+					° Teljesen elektronikus működés (ez Neumann idejében elektroncsöves felépítést jelentett, 
+					  amit később a tranzisztoros, majd az integrált áramkörös felépítés követett)
+					° Kettes számrendszer használata (az összes művelet, pl. összeadás, szorzás, kettes 
+					  számrendszerbeli logikai műveletekre redukálható)
+					° Belső memória használata
+					° Tárolt program elve. A számításokhoz szükséges adatokat és programutasításokat a gép 
+					  azonos módon, egyaránt a belső memóriában (operatív tár) tárolja.[3]
+					° Soros utasítás-végrehajtás (az utasítások végrehajtása időben egymás után történjen;
+					  ennek egy alternatívája a párhuzamos utasítás-végrehajtás, 
+					  amikor több utasítás egyidejűleg is végrehajtható: ezt a lehetőséget Neumann elvetette)
+					° Univerzális felhasználhatóság, Turing-gép (programozhatóság; a különböző feladatok 
+					  programokkal legyenek megoldva, nem pedig erre a célra épített hardverrel)
+					° Szerkezet: öt funkcionális egység (aritmetikai egység, központi vezérlőegység, memóriák, 
+					  bemeneti és kimeneti egységek)[1][4]
+			- Harvard architektúra(adat - utasítás memória)
+				~ Egy számítógép-felépítési elv, amelyben a programkód és az adatok külön,
+				  fizikailag elkülönített útvonalakon közlekednek a processzor felé.
+		Alapvető elemek: Processzor, Memória, Perifériák, Háttértár
+			- Osszekőtőkapocs: Busz(sin, adat, cím, vezérlő)
+			
+	Processzor utasítások
+	
+		- A rendszer minden eleme intelligens, de a kulcsszereplők: 
+			~ Processzor
+			~ Mikrokontroller
+		- Regiszterek: speciális memóriák a processzoron belül
+			~ Regiszter csoportok(általános, állapot jelző stb.)
+		- Utasításcsoportok
+			~ Adatmozgató utasítások(regiszter - memória között pl.)
+			~ Ugró utasítások, abszolút - relativ(goto?)
+			~ I/O port kezelése
+			~ Megszakítás kezelés stb.
+			
+	Processzor védelmi szintek
+		
+		- Intel 80286 minden utasítás egyenlő
+		- Intel 80386 nem az, 4 védelmi szintek
+			~ Ebből 2-t használ:
+				° Kernel mód(védett, protected mód) és
+				° Felhasználói mód
+		- Tipikusan védett módú utasítások
+			~ Megszakítás kezelés
+			~ I/O port kezelés
+			~ Bizonyos memória kezelés
+		- Szoftveres megszakítás, csapda(trap) kezelése azonos
+		  a hardveres megszakítás kezeléssel
+			~ A megszakítás forrása a különbség!
+		- Megszakítások
+			~ Megszakítás prioritások
+			~ NMI(Non Maskable Interrupt)
+			
+	Processzor utasítások használata
+	
+		- Adatok, utasítások a memóriában, ezeket a CPU végrehajtja
+			~ Mov al,'F'
+			~ Mov ah,'T'
+			~ Mov bl,'C'
+			~ Stb.
+		- Hol van itt az élvezet?
+			~ Hát ha látom is az eredményt(FTC)...(valami vicc lehetett a fradiról)
+			~ Ha egy perifériát (pl. képernyő) elérek és azon megjelenítem az adatokat
+			
+	Számítógépek felépítése (SW)
+	
+		- Végrehajtási, felépítési szintek
+			~ Logikai áramkörök
+			~ CPU, mikroprogram, mikroarchitektúra szintek
+			~ Számítógép, hardver elemek gépi kódja
+			~ Operációs rendszer
+			~ Rendszeralkalmazások
+				° Alacsony szintű, gépi kódú programok, meghajtók
+				° Magas szintű nyelvek, programok
+			~ Alkalmazások
+				° Felhasználói programok, Pasziánsz stb.
+				
+	Operációs rendszer fogalma
+	
+		- Operációs rendszer:
+			~ Olyan program, ami egyszerű felhasználói felületet nyújt, eltakarva a
+			  számítógép(rendszer) eszközeit.
+		- Op. rendszer mint kiterjesztett(virtuális) gép
+			~ Nem érdekel hogyan, csak át akarok másolni egy képet.
+		- Op. rendszer mint erőforrás menedzser
+			~ Nyomtatási sor kezelő(időalapú megosztás)
+			~ Memória(tér, címtér alapú megosztás)
+		- Kernel mód - Felügyelt mód
+			~ Miért kell ez?
+		- Felhasználói mód
+			~ Gyakran op.rendszer feladatok is itt helyezkednek el.
+		- Beágyazott rendszerek, akár op. rendszer nélkül
+	
+	Operácós rendszer feladata
+		
+		- Jól használható általános felhasználói felület biztosítása
+			~ 0. generációs felület:
+				° Sajátos kapcsolótábla
+			~ Korai rendszerek felületei
+				° Speciális terminálok
+					+ Már ekkor kialakul a mai rendszer szerkezete
+			~ 80-as évek eleje: mikrogépek(ZX81 stb.), Basic
+			~ PDP komptaibilis TPA1140, soros terminálok
+			~ MS DOS karakteres felület
+			~ Unix_X Windows rendszer, Xerox, MacOS
+			~ Windows 3.1, 95, 98, Mill, 2000, XP, Win7, Win10
+		- Ezek mennyire jó felhasználói felületek?
+		
+	Kommunikáció a perifériákkal
+		
+		- Lekérdezés átvitel(polling)
+			~ I/O port folyamatos lekérdezése.
+			~ Sok helyen alkalmazott technika, gyakran szinkron szoftver
+			  hívásoknál is alkalmazzák.
+			~ Memóriában való megjelenés(memory map)
+		- Megszakítás(Interrupt) használata
+			~ Nem kérdezgetjük folyamatosan, hanem a kívánt esemény
+			  bekövetkezésekor a megadott programrész kerül végrehajtásra.
+			~ Aszinkorn hívások(programesemények) megfelelő használata.
+		- DMA, közvetlen memória elérés
+			~ Pl. közvetlen memória címzés: 0xb800:0
+	
+	Programkönyvtárak
+	
+		- Az iménti(gépi kódú, stb.) utasítások szintjei
+			~ Gépi kód
+				° Pl: intel x86, mov ax, 'F', mov eax 'T', jmp cím
+		- Normál, felhasználói programkönyvtárak(API, Application Programming Interface)
+			~ C64 ROM Basic
+			~ Dos(IBM, MS), IO.sys, msdos.sys, interrupt tábla
+			~ Windows 98, ...Windows7, Win32 API
+			~ Unix-Linux rendszerkönyvtárak, C nyelv
+		- Script programozás(BASH, PowerShell)
+			~ Ezt láttuk, megismertük az I. félévben

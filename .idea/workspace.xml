@@ -29,11 +29,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f31f38ca-ec72-426b-ab94-87a15059a5c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beadando/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZH_GYAKORLAS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ZH_GYAKORLAS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beadando/FileEditor.c" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/FileEditor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beadando/FileEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/FileEditor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beadando/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/beadando.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/beadhaladás" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/beadando/storage.bin" beforeDir="false" afterPath="$PROJECT_DIR$/beadando/storage.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/Új mappa/FileEditor.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/Új mappa/FileEditor.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/Új mappa/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beadando/Új mappa/storage.bin" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Asztali gép" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,13 +74,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gulya\OneDrive\Dokumentumok\Elte-4fv-OperaciosRendszerek" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +92,7 @@
       <workItem from="1619958470897" duration="9740000" />
       <workItem from="1620319671384" duration="601000" />
       <workItem from="1620559066219" duration="18207000" />
+      <workItem from="1621157535736" duration="14627000" />
     </task>
     <servers />
   </component>

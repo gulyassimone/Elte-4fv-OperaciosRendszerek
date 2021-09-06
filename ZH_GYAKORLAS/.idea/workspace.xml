@@ -28,13 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff0ed753-ce7d-44d2-a535-143ad4129376" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5zh.c" beforeDir="false" afterPath="$PROJECT_DIR$/5zh.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../beadando/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../beadando/FileEditor.c" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/FileEditor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../beadando/FileEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/FileEditor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../beadando/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../beadando/storage.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../beadando/storage.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620890510545</updated>
-      <workItem from="1620890511593" duration="3280000" />
+      <workItem from="1620890511593" duration="10247000" />
     </task>
     <servers />
   </component>
